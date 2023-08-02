@@ -124,7 +124,7 @@ dep_usage_pkg <- function(pkg) {#}, recursive = TRUE) {
   ours <- is.na(pkg_calls$pkg)
   pkg_calls$pkg[ours] <- pkg
 
-  tibble::as.tibble(pkg_calls)
+  tibble::as_tibble(pkg_calls)
 }
 
 #' Determine usage of depedencies for a project
@@ -151,7 +151,7 @@ dep_usage_proj <- function(path = ".") {
   missing_pkg <- pkg_calls$pkg == "NA"
   pkg_calls$pkg[missing_pkg] <- fun_to_pkg[pkg_calls$fun[missing_pkg]]
 
-  tibble::as.tibble(pkg_calls)
+  tibble::as_tibble(pkg_calls)
 }
 
 dep_usage_file <- function(file) {
